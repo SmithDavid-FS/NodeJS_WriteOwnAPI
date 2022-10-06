@@ -6,9 +6,9 @@ const todoService = async () => {
     return await axios.get(`${process.env.todosURL}`);
 };
 
-const todoServiceById = async (setup) => {
-    console.log("The Reeal todos by setup and punchline");
-    return await axios.get(`${process.env.todosURL}${setup}`);
+const todoServiceById = async (id) => {
+    console.log("The Real todos by id");
+    return await axios.get(`${process.env.todosURL}${id}`);
 };
 
 module.exports = {todoService, todoServiceById};
