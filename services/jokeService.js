@@ -1,4 +1,5 @@
 const axios = require('axios');
+//when I add .default to the above call, it breaks the functions below and I cannot find any documentation to get around this error. So my code will not run properly
 require("dotenv").config();
 
 const jokeService = async () => {
@@ -6,9 +7,9 @@ const jokeService = async () => {
     return await axios.get(`${process.env.jokeURL}`);
 };
 
-const jokeServiceSetup = async (setup) => {
-    console.log("The joke setup");
-    return await axios.get(`${process.env.jokeURL}${setup}`);
+const jokeServiceSetup = async (id) => {
+    console.log("The joke id");
+    return await axios.get(`${process.env.jokeURL}[,${id}]`);
 };
 
 module.exports = {jokeService, jokeServiceSetup};

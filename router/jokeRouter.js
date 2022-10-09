@@ -16,8 +16,8 @@ jokeRouter.get("/", (req, res, next) => {
     });
 });
 
-jokeRouter.get("/:setup", (req, res, next) => {
-    jokeServiceSetup(req.params.setup)
+jokeRouter.get("/:id", (req, res, next) => {
+    jokeServiceSetup(req.params.id)
     .then((result) => {
         res.status(200).json(result.data);
     })
