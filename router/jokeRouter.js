@@ -1,9 +1,9 @@
 const express = require("express");
-const todosRouter = express.Router();
-const {todoService, todoServiceById} = require("../services/todoService");
+const jokeRouter = express.Router();
+const {jokeService, jokeServiceSetup} = require("../services/jokeService");
 
-todosRouter.get("/", (req, res, next) => {
-    todoService()
+jokeRouter.get("/", (req, res, next) => {
+    jokeService()
     .then(result => {
         res.status(200).json(result.data);
     })
@@ -16,8 +16,8 @@ todosRouter.get("/", (req, res, next) => {
     });
 });
 
-todosRouter.get("/:id", (req, res, next) => {
-    todoServiceById(req.params.id)
+jokeRouter.get("/:setup", (req, res, next) => {
+    jokeServiceSetup(req.params.setup)
     .then((result) => {
         res.status(200).json(result.data);
     })
@@ -30,4 +30,4 @@ todosRouter.get("/:id", (req, res, next) => {
     });
 });
 
-module.exports = todosRouter;
+module.exports = jokeRouter;

@@ -1,5 +1,5 @@
 const express = require("express");
-const todosRouter = require("../router/todosRouter");
+const jokeRouter = require("../router/jokeRouter");
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.get("/", (req, res, next) => {
     });
 });
 
-app.use("/todos", todosRouter);
+app.use("/jokeService", jokeRouter);
 
 
 app.use((req,res, next) => {
